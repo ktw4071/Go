@@ -28,7 +28,7 @@ func main() {
 }
 
 func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+	p.firstName = newFirstName // Pass by value, it won't update jim.firstName
 }
 
 func (p person) print() {
