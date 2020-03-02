@@ -2,23 +2,26 @@ package main
 
 import "fmt"
 
+type contactInfo struct {
+	email   string
+	zipCode int
+}
+
 type person struct {
 	firstName string
 	lastName  string
+	contact   contactInfo
 }
 
 func main() {
-	// 1
-	// alex := person{"Taewoo", "Kim"}
-	// 2
-	// alex := person{firstName: "Taewoo", lastName: "Kim"} // Same as above, but explicitly assign values, not relying on order in struct
-	// fmt.Println(alex)
-	// 3
-	var alex person
+	jim := person{
+		firstName: "Jim",
+		lastName:  "Party",
+		contact: contactInfo{
+			email:   "Jim@gmail.com",
+			zipCode: 94000,
+		},
+	}
 
-	alex.firstName = "Alex"
-	alex.lastName = "Anderson"
-
-	fmt.Println(alex)       // {} zerovalue is assigned as "" for string
-	fmt.Printf("%+v", alex) // {firstName: lastName:} %+v fills field name and value
+	fmt.Printf("%+v", jim)
 }
