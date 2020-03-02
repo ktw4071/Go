@@ -23,8 +23,7 @@ func main() {
 		},
 	}
 
-	jimPointer := &jim //give me the memory address of the value this variable is pointing at
-	jimPointer.updateName("jimmy")
+	jim.updateName("jimmy")
 	jim.print()
 }
 
