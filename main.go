@@ -23,12 +23,13 @@ func main() {
 		},
 	}
 
-	jim.updateName("jimmy")
+	jimPointer := &jim
+	jimPointer.updateName("jimmy")
 	jim.print()
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName // Pass by value, it won't update jim.firstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName // Pass by value, it won't update jim.firstName
 }
 
 func (p person) print() {
