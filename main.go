@@ -23,5 +23,14 @@ func main() {
 		},
 	}
 
-	fmt.Printf("%+v", jim)
+	jim.updateName("jimmy")
+	jim.print()
+}
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
