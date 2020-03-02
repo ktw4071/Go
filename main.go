@@ -23,12 +23,15 @@ func main() {
 		},
 	}
 
-	jimPointer := &jim
+	jimPointer := &jim //give me the memory address of the value this variable is pointing at
 	jimPointer.updateName("jimmy")
 	jim.print()
 }
 
-func (pointerToPerson *person) updateName(newFirstName string) {
+// turn "address" into "value" with "*address"
+// turn "value" into "address" with "&value"
+
+func (pointerToPerson *person) updateName(newFirstName string) { // give me the valeue  this memory address is pointing at
 	(*pointerToPerson).firstName = newFirstName // Pass by value, it won't update jim.firstName
 }
 
